@@ -11,13 +11,16 @@ function searchWeather() {
       const currentTime = new Date().toLocaleTimeString();
       document.getElementById('date-time').innerText = `Date: ${currentDate}, Time: ${currentTime}`;
       const currentTemp = document.getElementById('currentTemp');
+      const condition = document.getElementById("condition");
       const minMaxTemp = document.getElementById('minMaxTemp');
       const forecast = document.getElementById('forecast');
 
       if (data.cod === 200) {
         location.textContent = data.name + ', ' + data.sys.country;
-        currentTemp.textContent = `Current Temperature: ${data.main.temp}°C`;
-        minMaxTemp.textContent = `Max Temperature: ${data.main.temp_max}°C | Min Temperature: ${data.main.temp_min}°C`;
+        icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        currentTemp.textContent = `${data.main.temp}°C`;
+        condition.textContent = data.weather[0].main;
+        minMaxTemp.textContent = `Max Temp: ${data.main.temp_max}°C | Min Temp: ${data.main.temp_min}°C`;
 
         const weatherCondition = data.weather[0].main.toLowerCase();
         document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${weatherCondition}')`; // Using Unsplash for random weather images
@@ -53,6 +56,7 @@ function searchWeather() {
         minMaxTemp.textContent = '';
         forecast.textContent = '';
         document.body.style.backgroundImage = '';
+  
       }
     })
     .catch(error => console.error('Error fetching data:', error));
@@ -72,13 +76,16 @@ function getWeatherByCoordinates(latitude, longitude) {
 function displayWeatherData(data) {
   const location = document.getElementById('location');
   const currentTemp = document.getElementById('currentTemp');
+  const condition = document.getElementById("condition");
   const minMaxTemp = document.getElementById('minMaxTemp');
   const forecast = document.getElementById('forecast');
 
   if (data.cod === 200) {
     location.textContent = data.name + ', ' + data.sys.country;
-    currentTemp.textContent = `Current Temperature: ${data.main.temp}°C`;
-    minMaxTemp.textContent = `Max Temperature: ${data.main.temp_max}°C | Min Temperature: ${data.main.temp_min}°C`;
+    icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    currentTemp.textContent = `${data.main.temp}°C`;
+    condition.textContent = data.weather[0].main;
+    minMaxTemp.textContent = `Max Temp: ${data.main.temp_max}°C | Min Temp: ${data.main.temp_min}°C`;
 
     // Set background image based on weather condition
     const weatherCondition = data.weather[0].main.toLowerCase();
@@ -117,6 +124,7 @@ function displayWeatherData(data) {
     minMaxTemp.textContent = '';
     forecast.textContent = '';
     document.body.style.backgroundImage = '';
+  
   }
 }
 
