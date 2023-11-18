@@ -1,66 +1,102 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f3f3f3;
-  }
-  
-  .weather-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation-name: example;
-    animation-duration: 4s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-  }
-  @keyframes example {
-    0%   {background-color:#04364A;}
-    25%  {background-color:#176B87;}
-    50%  {background-color:#64CCC5;}
-    100% {background-color:#DAFFFB;}
-  }
-  
-  
-  .search-bar {
-    margin-bottom: 20px;
-  }
-  
-  #searchInput {
-    padding: 8px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 25px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .temperature {
-    margin-top: 20px;
-  }
-  
-  .forecast {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  /* Add more styles as needed */
-  
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.weather-container {
+  width: 80%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  text-align: center;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {background-color:#04364A;}
+  25%  {background-color:#176B87;}
+  50%  {background-color:#64CCC5;}
+  100% {background-color:#DAFFFB;}
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#searchInput {
+  width: 70%;
+  height: 20px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+button {
+  width: 20%;
+  height: 40px;
+  border: 10px;
+  outline: 10px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 25px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.temperature {
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.temperature img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.temperature h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.temperature h4 {
+  font-size: 24px;
+  font-weight: normal;
+  align-items: center;
+  color: #666;
+  margin-left: 20px;
+}
+
+.forecast {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+/* Add more styles as needed */
+
